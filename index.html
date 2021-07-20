@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  background: radial-gradient(circle at top center, #333 0%, #111 100%);
+  overflow: hidden;
+}
+.justify{
+	  text-align: justify;
+  text-justify: inter-word;
+}
+</style>
+</head>
+
+<body>
+
+<ons-splitter>
+  <ons-splitter-side id="menu" side="left" color="#bb8fce" width="220px" collapse swipeable>
+    <ons-page>
+      <ons-list>
+        <ons-list-item color="red" onclick="fn.load('Acasa.html')" tappable>
+          Acasa
+        </ons-list-item>
+         <ons-list-item color="red" onclick="fn.load('Cazuri.html')" tappable>
+          Cazuri pe judete
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('Test.html')" tappable>
+          Test covid
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('SfaturiSimptome.html')" tappable>
+          Sfaturi pentru simptome
+        </ons-list-item>
+         <ons-list-item onclick="fn.load('Credite.html')" tappable>
+          Credite
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="Acasa.html"></ons-splitter-content>
+</ons-splitter>
+
+<template id="Acasa.html">
+  <ons-page>
+
+<center>
+<h2 style = "color: #FFA101; text-align: center; font-family: sans-serif; ">Stiri de actualitate</h2></center>
+
+<ons-dialog id="covid1">
+    <div style="text-align: center; padding: 10px;">
+      <p  id = "moreprev1" style = "text-align: justify;"> 
+
+<br>
+
+       
+        <center>
+        <br><br><a href = "https://stirioficiale.ro/informatii/buletin-de-presa-16-noiembrie-2020-ora-13-00" id="link1" style = "color: #FFA101; text-align: center; font-family: sans-serif;">Link articol</a></p>
+</center>
+<br><br>
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('covid1')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+
+<ons-dialog id="covid2">
+    <div style="text-align: center; padding: 10px;">
+      <p id = "moreprev2" style = "text-align: justify;"> 
+       
+<br>
+         <center>
+        <br><br><a href = "https://stirioficiale.ro/informatii/buletin-de-presa-15-noiembrie-2020-ora-13-00" id="link2" style = "color: #FFA101; text-align: center; font-family: sans-serif;">Link articol</a></p>
+</center>
+<br><br>
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('covid2')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+
+<ons-dialog id="covid3">
+    <div style="text-align: center; padding: 10px;">
+      <p id = "moreprev3" style = "text-align: justify;"> 
+       <br>
+        
+         <center>
+        <br><br><a href = "https://stirioficiale.ro/informatii/buletin-de-presa-14-noiembrie-2020-ora-13-00" id="link3" style = "color: #FFA101; text-align: center; font-family: sans-serif;">Link articol</a></p>
+</center>
+<br><br>
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('covid3')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+
+<br><br>
+
+ <div class = "justify" style = "margin-left: 1rem; margin-right: 1rem;">
+<p id = "titlu1" style =" color: #FFA101;text-align: left; font-family: sans-serif; font-size: 1.3rem; text-decoration: underline;">
+</p>
+<p id = "previzualizare1">
+<br></p><br>
+<ons-button onclick="showTemplateDialog('covid1')">More</ons-button><br><br>
+<p id = "titlu2" style =" color: #FFA101;text-align: left; font-family: sans-serif; font-size: 1.3rem; text-decoration: underline;">
+</p>
+<p id = "previzualizare2">
+<br></p>
+<ons-button onclick="showTemplateDialog('covid2')">More</ons-button><br><br>
+<p id = "titlu3" style =" color: #FFA101;text-align: left; font-family: sans-serif; font-size: 1.3rem; text-decoration: underline;">
+</p>
+<p id = "previzualizare3">
+<br></p>
+<ons-button onclick="showTemplateDialog('covid3')">More</ons-button>
+</p>
+
+</div>
+
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+
+      </div>
+      <div class="center">
+        Acasa
+      </div>
+
+    </ons-toolbar>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+     
+    </p>
+  </ons-page>
+</template>
+
+<template id="Test.html">
+  <ons-page>
+  	
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Test
+      </div>
+    </ons-toolbar>
+<ons-button modifier="light" ng-click="myNavigator.pushPage('incercare.html', { animation : 'slide' } )">
+  Push Page
+</ons-button>
+
+
+  </ons-page>
+</template>
+
+
+<template id="incercare.html">
+  <ons-page>
+  	
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        incercare
+      </div>
+    </ons-toolbar>
+
+  </ons-page>
+</template>
+
+<template id="SfaturiSimptome.html">
+  <ons-page id = "Sfaturi">
+<ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button onclick="prev()">
+        <ons-icon icon="md-chevron-left"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center">Sfaturi pentru simptome</div>
+    <div class="right">
+      <ons-toolbar-button onclick="next()">
+        <ons-icon icon="md-chevron-right"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <ons-carousel fullscreen swipeable auto-scroll overscrollable id="carousel" style="height: auto;">
+    <ons-carousel-item autoScroll = "true">
+     <h1 style="color: #FFA101; font-size: 1.5rem; text-align: center;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;"> Afecțiuni </h1>
+      <div style="color: #fff; font-size: 1.3rem; text-align: justify;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">
+      	
+      <p style = "color:#45B8AC">&nbsp;&nbsp;Iată cele mai frecvente simptome ale noului Coronavirus:</p><br>
+      <p>
+&nbsp;<span style = "color:#D9CE52">•	Febră</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Tuse seacă</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Insuficiență respiratorie</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Oboseală </span><br><br>
+<span style = "color:#45B8AC;">Ne-am dori să fii atent și la:</span><br><br>
+&nbsp;<span style = "color:#D9CE52">•	Dureri musculare</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Durere în gât</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Diaree</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Conjunctivită</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Dureri de cap</span><br>
+&nbsp;<span style = "color:#D9CE52">•	Pierderea gustului sau a mirosului</span><br>
+&nbsp;<span style = "color:#D9CE52">•	O iritație la nivelul pielii</span> <br>
+</p>
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item>
+      <h1 style="color: #FFA101; font-size: 1.5rem; text-align: center;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">  Febra </h1>
+      <div style="color: #fff; font-size: 1.3rem; text-align: justify;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">
+<p style = "color:#45B8AC">&nbsp;Cum se manifestă?</p><br>
+<p>&nbsp;&nbsp;&nbsp;Febra se instalează atunci când temperatura corpului depășește nivelul normal de aproximativ 37°C. În afară de temperatura ridicată, febra cauzează deseori simptome cum ar fi transpirația, frisoanele, tremuratul, durerile de cap, durerile musculare, amețeala și starea generală de slăbiciune.
+Vestea bună este că în general febra se va ameliora în decurs de câteva zile și nu necesită măsuri speciale, ci doar câteva mici aspecte de care să ții cont.<br><br>
+<span style = "color:#45B8AC;">&nbsp;Recomandări</span><br><br>
+&nbsp;&nbsp;Pentru a reduce disconfortul cauzat de febră, noi îți sugerăm următoarele:<br>
+<br><span style = "color:#D9CE52">• Odihnește-te</span><br>
+<br><span style = "color:#D9CE52">• Bea multă apă pentru a preveni deshidratarea</span><br>
+<br><span style = "color:#D9CE52">• Consumă alimente ușoare, evită ceaiul și cafeaua</span><br>
+<br><span style = "color:#D9CE52">• Răcorește-te purtând haine subțiri și dormind în pijamale subțiri</span><br>
+<br><span style = "color:#D9CE52">• Pune-ți un prosop rece pe frunte</span><br>
+<br><span style = "color:#D9CE52">• Poți lua un medicament pentru reducerea febrei, cum ar fi Nurofen </span>
+
+
+</p>
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item>
+     <h1 style="color: #FFA101; font-size: 1.5rem; text-align: center;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">  Tusea seacă </h1>
+      <div style="color: #fff; font-size: 1.3rem; text-align: justify;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">
+      <p style = "color:#45B8AC">&nbsp;&nbsp;Ce este? </p><br>
+<p>
+&nbsp;&nbsp;Tusea este un reflex de protecție al organismului, prin care corpul încearcă să elimine substanțele nedorite din căile respiratorii. 
+În anumite momente, tusea poate deveni supărătoare. De regulă, ea se tratează complet în 3-4 săptămâni.<br><br>
+ <span style = "color:#45B8AC">&nbsp;&nbsp;Propuneri de remedii </span><br><br>
+&nbsp;&nbsp;În procesul vindecării tusei, te poți ajuta de:<br>
+<span style = "color:#D9CE52">•bomboane pentru tuse  </span>- mentolul și plantele naturale calmează tusea;<br><br> 
+<span style = "color:#D9CE52">•băuturi calde </span> - încălzește-ti căile respiratorii; poți adăuga tot timpul miere de albine; de asemenea, nu uita de efectele miraculoase ale supei de pui 🙂<br> <br> 
+<span style = "color:#D9CE52">•medicamente pentru tuse  </span>-  </span>este nevoie să tușești pentru a elimina mucusul<br><br> 
+<span style = "color:#D9CE52">•inhalarea de abur  </span>- aburul impiedică nasul și gâtul să fie prea uscate; foarte util este și un umidificator care să funcționeze în timp ce dormi<br><br> 
+<span style = "color:#D9CE52">•gargara cu apă sarată </span> – pare un proces dificil, dar va avea rezultate
+</p>
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item >
+      <h1 style="color: #FFA101; font-size: 1.5rem; text-align: center;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">  Insuficiența respiratorie </h1>
+     <div style="color: #fff; font-size: 1.3rem; text-align: justify;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">
+     <p style = "color:#45B8AC">&nbsp;&nbsp;Ce reprezintă?</p><br>
+<p>
+&nbsp;&nbsp;Insuficiența respiratorie este incapacitatea sistemului respirator de a realiza schimbul de gaze. Când o persoană are insuficiență respiratorie acută, schimbul obișnuit între oxigen și dioxid de carbon în plămâni nu are loc. Drept urmare, nu ajunge suficient oxigen la inimă, creier sau la restul corpului. Simptomele acestei afecțiuni dispar, de obicei, în una-două săptămâni.<br><br>
+&nbsp;&nbsp;<span style = "color:#45B8AC">Sugestiile noastre</span><br><br>
+&nbsp;&nbsp;Pentru tratarea infecțiilor de tract respirator, îți propunem:<br>
+Tratamente simptomatice precum Paracetamol, Ibuprofen; te rugăm să ai în vedere faptul că nu sunt recomandate antibioticele
+Consumul de lichide și ceaiuri calde - alături de miere de salcâm, de pin sau brad; este indicată și tinctura de propolis
+Încearcă să faci un repaus la domiciliu, pentru a evita pe cât posibil efortul fizic, în special
+</p>
+      </div>
+    </ons-carousel-item>
+    <ons-carousel-item>
+     <h1 style="color: #FFA101; font-size: 1.5rem; text-align: center;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">Oboseala</h1>
+     <div style="color: #fff; font-size: 1.3rem; text-align: justify;  margin-top: 2rem; margin-left: 0.8rem; margin-right:0.8rem;">
+      <p style = "color:#45B8AC">&nbsp;&nbsp;Prin ce se manifestă?</p><br> 
+<p>
+&nbsp;&nbsp;Oboseala este o stare fizică și mentală, caracterizată prin lipsa de energie și motivație. Percepută ca o stare generală de slăbiciune, ea poate fi cauzată de un efort fizic sau intelectual intens.<br><br> 
+  &nbsp;&nbsp; <span style = "color:#45B8AC">Ce poți face tu?</span><br> <br> 
+&nbsp;&nbsp;Pentru a îndepărta efectele oboselii, poți să îți asiguri:<br><br> 
+<span style = "color:#D9CE52 ">odihna </span>- totul începe de la reglarea somnului; nu uita că orele suficiente de somn îți vor oferi mereu energie pentru întreaga zi.<br><br> 
+<span style = " color:#D9CE52">alimentația potrivită</span> - îți reamintim că cerealele și făinoasele integrale sunt o sursă bună de energie, la fel și ouăle; de asemenea, fructele și legumele devin cele mai bune gustări, iar menținerea organismului hidratat este esențială.<br><br> 
+<span style = " color:#D9CE52">medicamentele și consumul de vitamine</span> - dacă medicamentele sunt folosite pentru îndepărtarea simptomelor, diverse suplimente pot fi folosite pentru a crește nivelul de energie.<br><br>
+
+&nbsp;&nbsp;Chiar dacă sunt mai puțin frecvente, celelalte simptome au importanța lor și ar trebui să le acorzi la fel de multă atenție. Astfel, cu o alimentație sănătoasă, program regulat de somn și de făcut mișcare, vei reuși să ajungi să ai un stil de viață sănătos pe termen lung. La acestea se adaugă atitudinea pozitivă și starea de bine pe care sperăm să o ai în permanență.🙂
+</p>
+      </div>
+    </ons-carousel-item>
+  </ons-carousel>
+  </ons-page>
+</template>
+
+
+
+
+
+
+
+
+
+
+<template id="Credite.html">
+
+  <ons-page>
+  	
+<p style =" margin-top:1.5rem; text-align: center; font-family: sans-serif; font-size: 2rem;">COVIDAPP</p><br><br>
+<p style =" text-align: center; font-family: sans-serif; font-size: 1.5rem;">Versiune: 1.0.0</p><br>
+<p style =" text-align: center; font-family: sans-serif; font-size: 1.5rem;">Creat de:</p><br>
+<p style =" text-align: center; font-family: sans-serif; font-size: 1rem;">Silvia Mlesnita<br>Denisa Georgiana Verstiuc<br> Samuel George Nistor <br> Marius Enache <br> Ungureanu Stefan</p> <br><br>
+
+<p style =" text-align: center; font-family: sans-serif; font-size: 1.5rem;">Webografie:</p><br>
+<p style =" text-align: center; font-family: sans-serif; font-size: 1rem;">covid-19.geo-spatial.org<br>apify.com<br>romania.europalibera.org<br>joinup.ec.europa.eu</p>
+
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Credite
+      </div>
+
+
+
+
+
+    </ons-toolbar>
+  </ons-page>
+</template>
+
+<template id="Cazuri.html">
+  <ons-page>
+
+
+
+  	<!--  Search input -->
+  	<p style="text-align: center; margin-top: 2.0rem;">
+ 
+  	 <ons-search-input width = "50%" id = "dan"
+      placeholder="Cauta judet"
+      onchange="ons.function(start(this.value))"
+    ></ons-search-input>  </p>	
+
+    <div id = "show" style="display: none; margin-top:30%">
+    <p id = "pjudet" style="color: #FFA101; text-align: center; font-family: sans-serif; font-size: 1.3rem;"></p>
+    <p id = "pcazuri_confirmate" style=" color: #FFA101;text-align: center; font-family: sans-serif; font-size: 1.3rem;"></p>
+    <p id = "pcazuri_active" style="color: #FFA101; text-align: center; font-family: sans-serif; font-size: 1.3rem;"></p>
+    <p id = "ptotal_morti" style="color: #FFA101; text-align: center; font-family: sans-serif; font-size: 1.3rem;"></p>
+    <p id = "poameni_vindecati" style=" color: #FFA101; text-align: center; font-family: sans-serif; font-size: 1.3rem;"></p>
+    </div>
+
+   <div id = "preload">
+   <p style="text-align: center; margin-top: 50%">
+   	Astept date...<br>
+   <p style = "margin-left:8rem; margin-right:8rem;">
+  <ons-progress-bar indeterminate></ons-progress-bar>
+</p>
+</div>
+
+
+
+
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Cazuri
+      </div>
+   
+    </ons-toolbar>
+
+
+  </ons-page>
+</template>
+
+
+</body>
+
+<script>
+
+var prev = function() {
+  var carousel = document.getElementById('carousel');
+  carousel.prev();
+};
+
+var next = function() {
+  var carousel = document.getElementById('carousel');
+  carousel.next();
+};
+
+ons.ready(function() {
+  var carousel = document.addEventListener('postchange', function(event) {
+    console.log('Changed to ' + event.activeIndex)
+  });
+});
+
+
+
+
+window.fn = {};
+
+
+window.fn.open = function() {
+  var menu = document.getElementById('menu');
+  menu.open();
+};
+
+window.fn.load = function(page) {
+  var content = document.getElementById('content');
+  var menu = document.getElementById('menu');
+  content.load(page)
+    .then(menu.close.bind(menu));
+};
+
+
+
+	/// SCRIPT NEWSLETTER
+var site = "http://cov19api.tk/";
+NewsLetter(site);
+function NewsLetter(site) {
+	fetch(site)
+	.then(function(site) { return site.json() })
+	.then(function(data) {
+	var d = new Date();
+	let x = parseInt(data[0].data.substring(8, 10));
+		/// actualizat /// titlu1 titlu2 titlu3 & previzualizare1/2/3
+		document.getElementById('titlu1').innerHTML = "Stiri covid " + x + "." +(d.getMonth()+1) + "." + d.getFullYear();
+		document.getElementById('previzualizare1').innerHTML = data[0].NewsCorona.substring(0, 141) + "..";
+		document.getElementById('moreprev1').innerHTML = data[0].NewsCorona;
+		document.getElementById('link1').href = data[0].link;
+
+		document.getElementById('titlu2').innerHTML ="Stiri covid " + (x-1) + "." +(d.getMonth()+1) + "." + d.getFullYear();
+		document.getElementById('previzualizare2').innerHTML = data[1].NewsCorona.substring(0, 141) + "..";
+		document.getElementById('moreprev2').innerHTML = data[1].NewsCorona;
+		document.getElementById('link2').href = data[1].link;
+
+		document.getElementById('titlu3').innerHTML ="Stiri covid " + (x-2) + "." +(d.getMonth()+1) + "." + d.getFullYear();
+		document.getElementById('previzualizare3').innerHTML = data[2].NewsCorona.substring(0, 141) + "..";
+		document.getElementById('moreprev3').innerHTML = data[2].NewsCorona;
+		document.getElementById('link3').href = data[2].link;
+})
+.catch(function() {
+		console.log("error");
+	})}
+
+
+
+
+
+	
+
+
+///DIALOG SCRIPT
+var showTemplateDialog = function(name) {
+  var dialog = document.getElementById(name);
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('dialog.html', { append: true })
+      .then(function(dialog) {
+        dialog.show();
+      });
+  }
+};
+
+var hideDialog = function(id) {
+  document
+    .getElementById(id)
+    .hide();
+};
+
+///
+
+
+/// SCRIPT CAZURI
+function start(text_input){
+	let text = text_input;
+	var incarcare = document.getElementById("preload");
+	incarcare.remove();
+	document.getElementById("show").style.display = "block";
+	let res = "http://cov19api.tk/";
+	Cazuri_Corona(res, text);
+}
+ function Cazuri_Corona(res, text) {
+	fetch(res)
+	.then(function(resp) { return resp.json() })
+	.then(function(data) {
+	var Judete = ["Alba", "Arad", "Arges", "Bacau", "Bihor", "Bistrita-Nasaud", "Botosani", "Brasov", "Braila", "Bucuresti", "Buzau", "Caras-Severin", "Calarasi", "Cluj", "Constanta","Dambovita", "Dolj", "Galati", "Giurgiu", "Gorj", "Harghita", "Hunedoara", "Ialomita", "Iasi", "Ilfov", "Maramures", "Mehedinti", "Mures", "Neamt", "Olt", "Prahova", "Satu Mare", "Salaj", "Sibiu", "Suceava", "Teleorman", "Timis", "Tulcea", "Vaslui", "Valcea", "Vrancea", "Covasna"];
+	let ok = false;
+	for(var i = 0; i<Judete.length; ++i)
+	{	
+		if(text == Judete[i])
+		{
+
+		var incarcare = document.getElementById("preload");
+		document.getElementById('pjudet').innerHTML = "Judet: " + data[i].County.toLocaleString('en');
+		document.getElementById('pcazuri_confirmate').innerHTML = "Cazuri confirmate: " + data[i].confirmed_cases.toLocaleString('en');
+		document.getElementById('pcazuri_active').innerHTML = "Cazuri active: " + data[i].total_deaths.toLocaleString('en');
+		document.getElementById('ptotal_morti').innerHTML = "Morti totale: " + data[i].healed_people.toLocaleString('en');
+		document.getElementById('poameni_vindecati').innerHTML = "Oameni vindecati: " + data[i].active_cases.toLocaleString('en');
+		ok = true;
+		}
+	}
+	if(ok == false)alert("Eroare!");
+	
+}
+)
+
+.catch(function() {
+		console.log("error");
+	})}
+
+
+document.addEventListener('prechange', function(event) {
+  document.querySelector('ons-toolbar .center')
+    .innerHTML = event.tabItem.getAttribute('label');
+});
+
+
+</script>
+</html>
